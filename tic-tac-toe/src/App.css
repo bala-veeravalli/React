@@ -1,0 +1,45 @@
+
+.square {
+  height: 150px;
+  width: 150px;
+  background-color: lightgray;
+  margin : 0 1px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.game {
+  background-color: white;
+}
+/*h1{
+  color: whitesmoke;
+}*/
+
+.headBoard{
+  text-align: center;
+}
+.board{
+  width : 100%;
+  height: 100%;
+  margin : 0 auto;
+}
+
+.row{
+  margin : 0 auto;
+}
+
+.val{
+  font-size:100px;
+  padding: 0;
+  margin: 0 auto;
+  vertical-align: middle;
+}
+table, th, td {
+    border: 1px solid black;
+}
+/*
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}*/
