@@ -1,0 +1,20 @@
+.App {
+  margin-top: 20px;
+  display: block;
+}
+.App-header{
+  display: inline-block;
+  width:48%;
+  height: 100%;
+}
+textarea{
+  width: 98%;
+}
+.output{
+  display: inline-block;
+  width: 49%;
+  height: 100%;
+  vertical-align: top;
+  margin-left: 10px solid black;
+  padding: 5px;
+}

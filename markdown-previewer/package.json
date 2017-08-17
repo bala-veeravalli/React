@@ -1,9 +1,9 @@
 {
-  "name": "chess",
+  "name": "markdown-previewer",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "immutable": "^3.8.1",
+    "marked": "^0.3.6",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },

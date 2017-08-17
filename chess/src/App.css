@@ -1,0 +1,24 @@
+.box span{
+  font-size: -webkit-xxx-large;
+}
+.box{
+  text-align: center;
+}
+.row{
+  margin: 0;
+}
+.game{
+  display: inline-block;
+  justify-content: center;
+  margin: auto;
+}
+.board{
+  display: grid;
+  border: 2px solid green;
+  grid-template-rows: repeat(8, 64px);
+  grid-template-columns: repeat(8,64px);
+}
+.board :nth-child(2n){
+  background-color: #ccc;
+  color: #000;
+}
