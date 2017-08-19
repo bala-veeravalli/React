@@ -12,7 +12,17 @@
   justify-content: center;
   margin: auto;
 }
-.board{
+.whiteBoard{
+  display: grid;
+  border: 2px solid green;
+  grid-template-rows: repeat(8, 64px);
+  grid-template-columns: repeat(8,64px);
+  transform: rotate(180deg);
+}
+.whiteBoard div{
+  transform: rotate(180deg);
+}
+.blackBoard{
   display: grid;
   border: 2px solid green;
   grid-template-rows: repeat(8, 64px);

@@ -1,92 +1,92 @@
 var Pieces = {
     startingPieces : function () {
-        return [
-            pawn(1,0,true),
-            pawn(1,1,true),
-            pawn(1,2,true),
-            pawn(1,3,true),
-            pawn(1,4,true),
-            pawn(1,5,true),
-            pawn(1,6,true),
-            pawn(1,7,true),
-            rook(0,0,true),
-            knight(0,1,true),
-            bishop(0,2,true),
-            queen(0,3,true),
-            king(0,4,true),
-            bishop(0,5,true),
-            knight(0,6,true),
-            rook(0,7,true),
-            pawn(6,0,false),
-            pawn(6,1,false),
-            pawn(6,2,false),
-            pawn(6,3,false),
-            pawn(6,4,false),
-            pawn(6,5,false),
-            pawn(6,6,false),
-            pawn(6,7,false),
-            rook(7,0,false),
-            knight(7,1,false),
-            bishop(7,2,false),
-            queen(7,3,false),
-            king(7,4,false),
-            bishop(7,5,false),
-            knight(7,6,false),
-            rook(7,7,false)
-        ]
+        return {
+            'a1' : rook({rowIndex : '1',columnIndex : 'a',isWhite : true}),
+            'b1' : knight({rowIndex : '1',columnIndex : 'b',isWhite : true}),
+            'c1' : bishop({rowIndex : '1',columnIndex : 'c',isWhite : true}),
+            'd1' : queen({rowIndex : '1',columnIndex : 'd',isWhite : true}),
+            'e1' : king({rowIndex : '1',columnIndex : 'e',isWhite : true}),
+            'f1' : bishop({rowIndex : '1',columnIndex : 'f',isWhite : true}),
+            'g1' : knight({rowIndex : '1',columnIndex : 'g',isWhite : true}),
+            'h1' : rook({rowIndex : '1',columnIndex : 'h',isWhite : true}),
+            'a2' : pawn({rowIndex : '2',columnIndex : 'a',isWhite : true}),
+            'b2' : pawn({rowIndex : '2',columnIndex : 'b',isWhite : true}),
+            'c2' : pawn({rowIndex : '2',columnIndex : 'c',isWhite : true}),
+            'd2' : pawn({rowIndex : '2',columnIndex : 'd',isWhite : true}),
+            'e2' : pawn({rowIndex : '2',columnIndex : 'e',isWhite : true}),
+            'f2' : pawn({rowIndex : '2',columnIndex : 'f',isWhite : true}),
+            'g2' : pawn({rowIndex : '2',columnIndex : 'g',isWhite : true}),
+            'h2' : pawn({rowIndex : '2',columnIndex : 'h',isWhite : true}),
+            'a8' : rook({rowIndex : '8',columnIndex : 'a',isWhite : false}),
+            'b8' : knight({rowIndex : '8',columnIndex : 'b',isWhite : false}),
+            'c8' : bishop({rowIndex : '8',columnIndex : 'c',isWhite : false}),
+            'd8' : queen({rowIndex : '8',columnIndex : 'd',isWhite : false}),
+            'e8' : king({rowIndex : '8',columnIndex : 'e',isWhite : false}),
+            'f8' : bishop({rowIndex : '8',columnIndex : 'f',isWhite : false}),
+            'g8' : knight({rowIndex : '8',columnIndex : 'g',isWhite : false}),
+            'h8' : rook({rowIndex : '8',columnIndex : 'h',isWhite : false}),
+            'a7' : pawn({rowIndex : '7',columnIndex : 'a',isWhite : false}),
+            'b7' : pawn({rowIndex : '7',columnIndex : 'b',isWhite : false}),
+            'c7' : pawn({rowIndex : '7',columnIndex : 'c',isWhite : false}),
+            'd7' : pawn({rowIndex : '7',columnIndex : 'd',isWhite : false}),
+            'e7' : pawn({rowIndex : '7',columnIndex : 'e',isWhite : false}),
+            'f7' : pawn({rowIndex : '7',columnIndex : 'f',isWhite : false}),
+            'g7' : pawn({rowIndex : '7',columnIndex : 'g',isWhite : false}),
+            'h7' : pawn({rowIndex : '7',columnIndex : 'h',isWhite : false}),
+        }
     }
 }
 
-function Piece(rowIndex,columnIndex, isWhite) {
+function Piece(piece = {}) {
     return {
-        rowIndex,
-        columnIndex,
-        isWhite,
+        rowIndex : piece.rowIndex,
+        columnIndex : piece.columnIndex,
+        isWhite : piece.isWhite,
         onBoard : true
     }
 }
 
-function pawn(rowIndex,columnIndex, isWhite) {
+function pawn(piece) {
     return{
-        ...Piece(rowIndex,columnIndex, isWhite),
+        ...Piece(piece),
         name : 'Pawn',
-        symbol : isWhite ? String.fromCharCode(9817) : String.fromCharCode(9823),
+        symbol : piece.isWhite ? String.fromCharCode(9817) : String.fromCharCode(9823),
     }
 }
 
-function king(rowIndex,columnIndex, isWhite) {
+function king(piece) {
     return{
-        ...Piece(rowIndex,columnIndex, isWhite),
+        ...Piece(piece),
         name : 'King',
-        symbol : isWhite ? String.fromCharCode(9812) : String.fromCharCode(9818)
+        symbol : piece.isWhite ? String.fromCharCode(9812) : String.fromCharCode(9818)
     }
 }
-function rook(rowIndex,columnIndex, isWhite) {
+function rook(piece) {
     return{
-        ...Piece(rowIndex,columnIndex, isWhite),
+        ...Piece(piece),
         name : 'Rook',
-        symbol : isWhite ? String.fromCharCode(9814) : String.fromCharCode(9820)
+        symbol : piece.isWhite ? String.fromCharCode(9814) : String.fromCharCode(9820)
     }
 }
-function knight(rowIndex,columnIndex, isWhite) {
+function knight(piece) {
     return{
-        ...Piece(rowIndex,columnIndex, isWhite),
+        ...Piece(piece),
         name : 'Knight',
-        symbol : isWhite ? String.fromCharCode(9816) : String.fromCharCode(9822)
+        symbol : piece.isWhite ? String.fromCharCode(9816) : String.fromCharCode(9822)
     }
 }
-function bishop(rowIndex,columnIndex, isWhite) {
+function bishop(piece) {
     return{
-        ...Piece(rowIndex,columnIndex, isWhite),
+        ...Piece(piece),
         name : 'Bishop',
-        symbol : isWhite ? String.fromCharCode(9815) : String.fromCharCode(9821)
+        symbol : piece.isWhite ? String.fromCharCode(9815) : String.fromCharCode(9821)
     }
 }
-function queen(rowIndex,columnIndex, isWhite) {
+function queen(piece) {
     return{
-        ...Piece(rowIndex,columnIndex, isWhite),
+        ...Piece(piece),
         name : 'Queen',
-        symbol : isWhite ? String.fromCharCode(9813) : String.fromCharCode(9819)
+        symbol : piece.isWhite ? String.fromCharCode(9813) : String.fromCharCode(9819)
     }
 }
 
