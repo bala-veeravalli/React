@@ -17,8 +17,8 @@ class Game extends Component {
 
   handleClick(move){
     var currentBox = this.state.currentBox;
+    var pieces = this.state.pieces;
     if(currentBox){
-      var pieces = this.state.pieces;
       var tempPiece = pieces.get(currentBox);
       tempPiece.rowIndex = move[0];
       tempPiece.columnIndex = move[1];
@@ -26,12 +26,16 @@ class Game extends Component {
       tempPieces = tempPieces.delete(currentBox);
       this.setState({
         pieces : tempPieces,
-        currentBox : null
+        currentBox : null,
+        isWhiteTurn : !this.state.isWhiteTurn
       })
     }else{
-      this.setState({
-        currentBox : move
-      })
+      if(pieces.get(move) && pieces.get(move).isWhite === this.state.isWhiteTurn)
+      {
+        this.setState({
+          currentBox : move
+        })
+      }
     }
   }
   render() {
