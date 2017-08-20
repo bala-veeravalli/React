@@ -5,6 +5,7 @@
   "dependencies": {
     "immutable": "^3.8.1",
     "react": "^15.6.1",
+    "react-bootstrap": "^0.31.2",
     "react-dom": "^15.6.1"
   },
   "devDependencies": {
