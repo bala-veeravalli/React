@@ -15,6 +15,8 @@
   display: inline-flex;
   justify-content: center;
   margin:0 2px;
+  cursor: pointer;
+  user-select: none;
 }
 .whiteBoard{
   display: grid;
@@ -43,3 +45,22 @@
   font-size: 400%;
 }
 
+.blackBox {
+  background-color: lightslategray;
+}
+.whiteBox {
+  background-color: white;
+}
+
+.active.blackBox{
+  background-color: rgba(60, 121, 60, 0.89);
+}
+.active.whiteBox{
+  background-color: rgba(60, 121, 60, 0.89);
+}
+.lastMove.blackBox{
+  background-color: rgba(133, 142, 67, 0.89);
+}
+.lastMove.whiteBox{
+  background-color: rgba(133, 142, 67, 0.89);
+}
