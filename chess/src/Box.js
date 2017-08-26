@@ -7,11 +7,8 @@ class Box extends React.Component{
     }
     render(){
         const piece = this.props.piece ? <span>{this.props.piece.symbol}</span> : '';
-        const rowIndex = this.props.rowIndex;
-        const columnIndex = this.props.columnIndex.charCodeAt(0) - 97;
         return (
-            <div className="box" 
-                style={{backgroundColor : (rowIndex + columnIndex) % 2 ? "lightslategray" : "white"}}
+            <div className={this.props.boxClass}
                  onClick={() => this.handleClick()}>
                 {piece}
             </div>
